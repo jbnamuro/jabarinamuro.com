@@ -30,7 +30,14 @@ document.addEventListener("DOMContentLoaded", (event) => {
       trigger: ".second-page",
       end: "50%",
       scrub: true,
-      markers: true,
+    },
+  });
+  gsap.to(".second-page", {
+    clipPath: "inset(0 0px round 28px 28px 0 0)",
+    scrollTrigger: {
+      trigger: ".second-page",
+      end: "10%",
+      scrub: true,
     },
   });
 
