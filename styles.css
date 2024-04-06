@@ -11,6 +11,9 @@
   padding: 0;
   margin: 0;
   font-family: "Syne", sans-serif;
+}
+
+body {
   color: var(--text);
 }
 
@@ -59,7 +62,7 @@ a {
   position: relative;
   z-index: 2;
   height: 100vh;
-  background-color: var(--text);
+  background-color: var(--primary);
   clip-path: inset(0 50px round 28px 28px 0 0);
 }
 
@@ -73,10 +76,30 @@ header {
 .links p {
   margin-bottom: 10px;
   transition: color 150ms ease-out;
+  position: relative;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.links p::before {
+  content: "";
+  width: 100%;
+  bottom: 0;
+  position: absolute;
+  height: 2px;
+  background-color: var(--text);
+  transform: scaleX(0);
+  transition: transform 300ms ease-out;
+  transform-origin: 0% 50%;
 }
 
 .links p:hover {
   color: var(--primary);
+}
+
+.links p:hover::before {
+  transform: scaleX(1);
+  transform-origin: 100% 50%;
 }
 
 b {
@@ -84,6 +107,75 @@ b {
 }
 
 .about-me h1 {
-  color: white;
-  text-align: center;
+  font-size: 48px;
+}
+
+.about-me {
+  padding: 60px;
+}
+
+.nav-bars {
+  font-size: 200px;
+  position: fixed;
+  z-index: 10;
+  top: 5%;
+  right: 5%;
+  background-color: var(--text);
+  padding: 20px;
+  border-radius: 28px;
+  cursor: pointer;
+  transform: scale(0);
+}
+
+.bar {
+  background-color: var(--primary);
+  height: 2px;
+  width: 20px;
+}
+
+#bar1 {
+  margin-bottom: 5px;
+}
+
+.click-menu {
+  position: fixed;
+  display: flex;
+  top: 0;
+  right: 0;
+  z-index: 9;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+}
+
+.clickOff {
+  height: 100vh;
+  width: 50%;
+  display: none;
+  pointer-events: all;
+}
+
+.menu-items {
+  background-color: #84dd6e;
+  margin: 10px;
+  height: calc(100% - 20px);
+  width: 50%;
+  border-radius: 28px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  clip-path: polygon(100% 0%, 100% 0, 100% 100%, 100% 100%);
+  pointer-events: all;
+}
+
+.menu-items h3 {
+  margin: 10px 15%;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.click-menu img {
+  position: absolute;
+  bottom: 5%;
+  right: 10%;
 }
