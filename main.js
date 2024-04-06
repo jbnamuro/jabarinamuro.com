@@ -83,8 +83,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
     lenis.scrollTo(".second-page");
   });
 
+  let running = 0;
   document.querySelector(".nav-bars").addEventListener("click", () => {
     if (clicked) {
+      running += 1;
+      console.log(running);
       gsap.to(".menu-items", {
         clipPath: "polygon(0% 0%, 100% 0, 100% 100%, 0% 100%)",
         ease: "power2.out",
@@ -97,9 +100,13 @@ document.addEventListener("DOMContentLoaded", (event) => {
         clipPath: "polygon(100% 0%, 100% 0, 100% 100%, 100% 100%)",
         ease: "power2.out",
         onComplete: () => {
-          gsap.set(".clickOff", {
-            display: "none",
-          });
+          running -= 1;
+          console.log(running);
+          if (running < 1) {
+            gsap.set(".clickOff", {
+              display: "none",
+            });
+          }
         },
       });
     }
@@ -110,13 +117,33 @@ document.addEventListener("DOMContentLoaded", (event) => {
       clipPath: "polygon(100% 0%, 100% 0, 100% 100%, 100% 100%)",
       ease: "power2.out",
       onComplete: () => {
-        gsap.set(".clickOff", {
-          display: "none",
-        });
+        running -= 1;
+        if (running < 1) {
+          gsap.set(".clickOff", {
+            display: "none",
+          });
+        }
       },
     });
     barsTL.reverse();
     clicked = false;
+  });
+
+  gsap.set(".info-wrapper", {
+    position: "absolute",
+  });
+
+  gsap.to(".info-wrapper", {
+    top: 0,
+    stagger: 0.5,
+    opacity: 1,
+    scrollTrigger: {
+      trigger: ".info-wrapper",
+      start: "top center",
+      scrub: true,
+      pin: ".full-wrap",
+      end: "+=1500",
+    },
   });
 
   const lenis = new Lenis();
