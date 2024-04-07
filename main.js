@@ -82,6 +82,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
   document.getElementById("abtBtn").addEventListener("click", () => {
     lenis.scrollTo(".second-page");
   });
+  document.getElementById("portBtn").addEventListener("click", () => {
+    lenis.scrollTo(".portfolio", { duration: 2 });
+  });
 
   let running = 0;
   document.querySelector(".nav-bars").addEventListener("click", () => {
@@ -138,13 +141,20 @@ document.addEventListener("DOMContentLoaded", (event) => {
     stagger: 0.5,
     opacity: 1,
     scrollTrigger: {
-      trigger: ".info-wrapper",
-      start: "top center",
+      trigger: ".full-wrap",
+      start: "top 12%",
       scrub: true,
       pin: ".full-wrap",
       end: "+=1500",
     },
   });
+
+  for (let i = 0; i < 5; i++) {
+    let copy = document.querySelector(".port-dot").cloneNode(true);
+    document.querySelector(".scroller").appendChild(copy);
+  }
+  let copy2 = document.querySelector(".scroller").cloneNode(true);
+  document.querySelector(".scroller-wrapper").appendChild(copy2);
 
   const lenis = new Lenis();
 
