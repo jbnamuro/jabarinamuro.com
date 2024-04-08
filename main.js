@@ -69,6 +69,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
       toggleActions: "play none none reverse",
     },
   });
+
   document.querySelector(".nav-bars").addEventListener("click", () => {
     if (!clicked) {
       barsTL.play();
@@ -79,57 +80,46 @@ document.addEventListener("DOMContentLoaded", (event) => {
     }
   });
 
+  document.querySelector(".nav-bars").addEventListener("click", () => {
+    if (clicked) {
+      gsap.set(".offClick", {
+        display: "block",
+      });
+      gsap.to(".menu-items", {
+        clipPath: "polygon(0% 0%, 100% 0, 100% 100%, 0% 100%)",
+        ease: "power2.out",
+      });
+    } else {
+      gsap.set(".offClick", {
+        display: "none",
+      });
+      gsap.to(".menu-items", {
+        clipPath: "polygon(100% 0%, 100% 0, 100% 100%, 100% 100%)",
+        ease: "power2.out",
+      });
+    }
+  });
+
+  document.querySelector(".offClick").addEventListener("click", () => {
+    barsTL.reverse();
+    clicked = false;
+    gsap.set(".offClick", {
+      display: "none",
+    });
+    gsap.to(".menu-items", {
+      clipPath: "polygon(100% 0%, 100% 0, 100% 100%, 100% 100%)",
+      ease: "power2.out",
+    });
+  });
+
   document.getElementById("abtBtn").addEventListener("click", () => {
     lenis.scrollTo(".second-page");
   });
   document.getElementById("portBtn").addEventListener("click", () => {
     lenis.scrollTo(".portfolio", { duration: 2 });
   });
-
-  let running = 0;
-  document.querySelector(".nav-bars").addEventListener("click", () => {
-    if (clicked) {
-      running += 1;
-      console.log(running);
-      gsap.to(".menu-items", {
-        clipPath: "polygon(0% 0%, 100% 0, 100% 100%, 0% 100%)",
-        ease: "power2.out",
-      });
-      gsap.set(".clickOff", {
-        display: "block",
-      });
-    } else {
-      gsap.to(".menu-items", {
-        clipPath: "polygon(100% 0%, 100% 0, 100% 100%, 100% 100%)",
-        ease: "power2.out",
-        onComplete: () => {
-          running -= 1;
-          console.log(running);
-          if (running < 1) {
-            gsap.set(".clickOff", {
-              display: "none",
-            });
-          }
-        },
-      });
-    }
-  });
-
-  document.querySelector(".clickOff").addEventListener("click", () => {
-    gsap.to(".menu-items", {
-      clipPath: "polygon(100% 0%, 100% 0, 100% 100%, 100% 100%)",
-      ease: "power2.out",
-      onComplete: () => {
-        running -= 1;
-        if (running < 1) {
-          gsap.set(".clickOff", {
-            display: "none",
-          });
-        }
-      },
-    });
-    barsTL.reverse();
-    clicked = false;
+  document.getElementById("contactBtn").addEventListener("click", () => {
+    lenis.scrollTo(".contact-page", { duration: 2 });
   });
 
   gsap.set(".info-wrapper", {
