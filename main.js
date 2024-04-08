@@ -1,7 +1,17 @@
 document.addEventListener("DOMContentLoaded", (event) => {
   gsap.registerPlugin(ScrollTrigger);
 
-  const text = new SplitType("#target");
+  const text = new SplitType("#my-text");
+
+  gsap.set(".intro-container h1", {
+    y: 75,
+  });
+
+  gsap.to(".intro-container h1", {
+    y: 0,
+    duration: 0.7,
+    stagger: 0.1,
+  });
 
   let size = -29;
   let textMovement = gsap.timeline({ repeat: -1 });
