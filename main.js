@@ -122,6 +122,46 @@ document.addEventListener("DOMContentLoaded", (event) => {
     });
   });
 
+  gsap.set(".scroller-wrapper #first-part", {
+    xPercent: -60,
+  });
+  gsap.set(".scroller-wrapper #second-part", {
+    xPercent: 60,
+  });
+
+  gsap.to(".scroller-wrapper #first-part, .scroller-wrapper #second-part", {
+    xPercent: 0,
+    scrollTrigger: {
+      trigger: ".portfolio",
+      start: "top+=650",
+      end: "+=1300",
+      // markers: true,
+      scrub: true,
+    },
+  });
+
+  gsap.to(".deleting h1", {
+    opacity: 0,
+    scrollTrigger: {
+      trigger: ".portfolio",
+      start: "top+=750",
+      end: "+=1000",
+      // markers: true,
+      scrub: true,
+    },
+  });
+
+  gsap.to(".pseudo h1", {
+    opacity: 1,
+    scrollTrigger: {
+      trigger: ".portfolio",
+      start: "top+=750",
+      end: "+=1000",
+      // markers: true,
+      scrub: true,
+    },
+  });
+
   document.getElementById("abtBtn").addEventListener("click", () => {
     lenis.scrollTo(".second-page");
   });

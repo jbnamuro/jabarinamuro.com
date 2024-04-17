@@ -345,33 +345,23 @@ h1.count {
   z-index: 2;
 }
 
-.scroller h1 {
-  font-size: 64px;
-  margin: 0 20px;
+.scroller-wrapper h1 {
+  font-size: 10vw;
 }
 
-.scroller {
-  width: fit-content;
-  display: flex;
-  animation: scroller 4s linear infinite;
+.scroller-wrapper #first-part {
+  margin-right: 20vw;
+  position: relative;
+}
+
+.scroller-wrapper #second-part {
+  margin-right: -20vw;
 }
 
 .scroller-wrapper {
   overflow: hidden;
   display: flex;
-}
-
-@keyframes scroller {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
-.port-dot {
-  display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
@@ -383,6 +373,26 @@ h1.count {
   justify-content: space-between;
   align-items: center;
   overflow: hidden;
+}
+
+.pseudo {
+  position: absolute;
+  width: 100%;
+  transform: translateY(-100%);
+}
+
+.pseudo #first-part {
+  background-image: linear-gradient(to right, var(--secondary), var(--primary));
+  background-clip: text;
+  color: transparent;
+  opacity: 0;
+}
+
+.pseudo #second-part {
+  background-image: linear-gradient(to left, var(--secondary), var(--primary));
+  background-clip: text;
+  color: transparent;
+  opacity: 0;
 }
 
 .project-wrapper a {
