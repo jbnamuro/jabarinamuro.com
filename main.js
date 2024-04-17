@@ -149,13 +149,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
     },
   });
 
-  for (let i = 0; i < 5; i++) {
-    let copy = document.querySelector(".port-dot").cloneNode(true);
-    document.querySelector(".scroller").appendChild(copy);
-  }
-  let copy2 = document.querySelector(".scroller").cloneNode(true);
-  document.querySelector(".scroller-wrapper").appendChild(copy2);
-
   const lenis = new Lenis();
 
   lenis.on("scroll", (e) => {

@@ -353,7 +353,7 @@ h1.count {
 .scroller {
   width: fit-content;
   display: flex;
-  animation: scroller 12s linear infinite;
+  animation: scroller 4s linear infinite;
 }
 
 .scroller-wrapper {
