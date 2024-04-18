@@ -145,7 +145,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     scrollTrigger: {
       trigger: ".portfolio",
       start: "top+=750",
-      end: "+=1000",
+      end: "+=1200",
       // markers: true,
       scrub: true,
     },
@@ -156,7 +156,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     scrollTrigger: {
       trigger: ".portfolio",
       start: "top+=750",
-      end: "+=1000",
+      end: "+=1200",
       // markers: true,
       scrub: true,
     },
