@@ -162,14 +162,39 @@ document.addEventListener("DOMContentLoaded", (event) => {
     },
   });
 
-  document.getElementById("abtBtn").addEventListener("click", () => {
-    lenis.scrollTo(".second-page");
+  let abtMenu = document.querySelectorAll(".abtBtn");
+  abtMenu.forEach((e) => {
+    e.addEventListener("click", () => {
+      lenis.scrollTo(".second-page", { duration: 2 });
+    });
   });
-  document.getElementById("portBtn").addEventListener("click", () => {
-    lenis.scrollTo(".portfolio", { duration: 2 });
+
+  let portMenu = document.querySelectorAll(".portBtn");
+  portMenu.forEach((e) => {
+    e.addEventListener("click", () => {
+      lenis.scrollTo(".portfolio", { duration: 2 });
+    });
   });
-  document.getElementById("contactBtn").addEventListener("click", () => {
-    lenis.scrollTo(".contact-page", { duration: 2 });
+
+  let contactMenu = document.querySelectorAll(".contactBtn");
+  contactMenu.forEach((e) => {
+    e.addEventListener("click", () => {
+      lenis.scrollTo(".contact-page", { duration: 2 });
+    });
+  });
+
+  [abtMenu[1], portMenu[1], contactMenu[1]].forEach((e) => {
+    e.addEventListener("click", () => {
+      barsTL.reverse();
+      clicked = false;
+      gsap.set(".offClick", {
+        display: "none",
+      });
+      gsap.to(".menu-items", {
+        clipPath: "polygon(100% 0%, 100% 0, 100% 100%, 100% 100%)",
+        ease: "power2.out",
+      });
+    });
   });
 
   gsap.set(".info-wrapper", {
