@@ -231,17 +231,17 @@ b {
 
 .video-logo {
   position: absolute;
-  bottom: 5%;
-  right: 10%;
-  width: 80px;
-  height: 80px;
+  bottom: 20px;
+  right: 40px;
+  width: min(80px, 15vw);
+  height: min(80px, 15vw);
   cursor: pointer;
   overflow: hidden;
 }
 
 .video-logo video {
-  height: 80px;
-  width: 80px;
+  height: min(80px, 15vw);
+  width: min(80px, 15vw);
 }
 
 .landing-page svg {

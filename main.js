@@ -175,11 +175,12 @@ document.addEventListener("DOMContentLoaded", (event) => {
     });
   });
 
-  document.querySelector(".video-logo").addEventListener("click", () => {
+  let logoClick = document.querySelector(".video-logo");
+  logoClick.addEventListener("click", () => {
     lenis.scrollTo(".links", { offset: -200 });
   });
 
-  [(abtMenu[1], portMenu[1], contactMenu[1])].forEach((e) => {
+  [(abtMenu[1], portMenu[1], contactMenu[1], logoClick)].forEach((e) => {
     e.addEventListener("click", () => {
       barsTL.reverse();
       clicked = false;
