@@ -42,14 +42,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
       scrub: true,
     },
   });
-  gsap.to(".second-page", {
-    clipPath: "inset(0 0px round 28px 28px 0 0)",
-    scrollTrigger: {
-      trigger: ".second-page",
-      end: "10%",
-      scrub: true,
-    },
-  });
 
   let clicked = false;
   let barsTL = gsap.timeline({ paused: true });
