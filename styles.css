@@ -234,7 +234,14 @@ b {
   bottom: 5%;
   right: 10%;
   width: 80px;
+  height: 80px;
   cursor: pointer;
+  overflow: hidden;
+}
+
+.video-logo video {
+  height: 80px;
+  width: 80px;
 }
 
 .landing-page svg {

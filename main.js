@@ -176,7 +176,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
   });
 
   document.querySelector(".video-logo").addEventListener("click", () => {
-    lenis.scrollTo(".landing-page");
+    lenis.scrollTo(".links", { offset: -200 });
   });
 
   [(abtMenu[1], portMenu[1], contactMenu[1])].forEach((e) => {
