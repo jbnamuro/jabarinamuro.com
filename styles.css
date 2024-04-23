@@ -229,11 +229,12 @@ b {
   color: var(--primary);
 }
 
-.click-menu img {
+.video-logo {
   position: absolute;
   bottom: 5%;
   right: 10%;
   width: 80px;
+  cursor: pointer;
 }
 
 .landing-page svg {
@@ -640,5 +641,9 @@ footer {
 
   footer {
     margin: 20px;
+  }
+
+  .project svg {
+    display: none;
   }
 }

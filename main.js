@@ -175,7 +175,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
     });
   });
 
-  [abtMenu[1], portMenu[1], contactMenu[1]].forEach((e) => {
+  document.querySelector(".video-logo").addEventListener("click", () => {
+    lenis.scrollTo(".landing-page");
+  });
+
+  [(abtMenu[1], portMenu[1], contactMenu[1])].forEach((e) => {
     e.addEventListener("click", () => {
       barsTL.reverse();
       clicked = false;
