@@ -180,8 +180,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
     lenis.scrollTo(".links", { offset: -200 });
   });
 
-  [(abtMenu[1], portMenu[1], contactMenu[1], logoClick)].forEach((e) => {
+  [abtMenu[1], portMenu[1], contactMenu[1], logoClick].forEach((e) => {
     e.addEventListener("click", () => {
+      console.log("hit");
       barsTL.reverse();
       clicked = false;
       gsap.set(".offClick", {
