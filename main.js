@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
   new SplitType(".my-text");
   new SplitType("#greeting");
   new SplitType("#aLittle");
+  new SplitType("#create");
 
   gsap.set(".my-text .word", {
     y: 75,
@@ -72,8 +73,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
     duration: 0.5,
     scrollTrigger: {
       trigger: ".about-me",
-      // markers: true,
-      start: "top center",
+      markers: true,
+      start: "top 70%",
     },
   });
 
@@ -273,6 +274,18 @@ document.addEventListener("DOMContentLoaded", (event) => {
       scrub: true,
       pin: ".full-wrap",
       end: "+=1500",
+    },
+  });
+
+  gsap.from("#create .word", {
+    opacity: 0,
+    y: 25,
+    stagger: 0.1,
+    duration: 0.5,
+    scrollTrigger: {
+      trigger: ".last-message",
+      markers: true,
+      start: "top 70%",
     },
   });
 
