@@ -126,7 +126,7 @@ header {
   width: 100%;
   bottom: 0;
   position: absolute;
-  height: 2px;
+  height: 1px;
   background-color: var(--text);
   transform: scaleX(0);
   transition: transform 300ms ease-out;
