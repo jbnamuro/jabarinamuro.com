@@ -1,16 +1,80 @@
 document.addEventListener("DOMContentLoaded", (event) => {
   gsap.registerPlugin(ScrollTrigger);
 
-  const text = new SplitType("#my-text");
+  new SplitType(".my-text");
+  new SplitType("#greeting");
+  new SplitType("#aLittle");
 
-  gsap.set(".intro-container h1", {
+  gsap.set(".my-text .word", {
     y: 75,
   });
 
-  gsap.to(".intro-container h1", {
-    y: 0,
-    duration: 0.7,
+  let intro = gsap.timeline({});
+  intro
+    .to(".my-text .word", {
+      y: 0,
+      duration: 0.7,
+      stagger: 0.12,
+    })
+    .set(".intro-container", {
+      clipPath: "none",
+    })
+    .to(".my-text .line", {
+      delay: 0.15,
+      y: -200,
+      opacity: 0,
+      stagger: 0.1,
+    })
+    .to(
+      ".intro",
+      {
+        clipPath: "polygon(0 0, 100% 0, 100% 0%, 0% 0%)",
+        delay: 0.3,
+        ease: "power1.out",
+      },
+      "<"
+    )
+    .from(".links p", {
+      x: -20,
+      opacity: 0,
+      stagger: 0.08,
+    })
+    .from(
+      "#greeting .char",
+      {
+        opacity: 0,
+        y: 20,
+        stagger: 0.06,
+      },
+      "<"
+    )
+    .from(
+      ".svg-cont",
+      {
+        delay: 0.15,
+        opacity: 0,
+      },
+      "<"
+    )
+    .from(
+      ".text-scroll",
+      {
+        delay: 0.65,
+        opacity: 0,
+      },
+      "<"
+    );
+
+  gsap.from("#aLittle .word", {
+    opacity: 0,
+    y: 25,
     stagger: 0.1,
+    duration: 0.5,
+    scrollTrigger: {
+      trigger: ".about-me",
+      // markers: true,
+      start: "top center",
+    },
   });
 
   let size = -29;
