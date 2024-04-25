@@ -24,7 +24,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
       delay: 0.15,
       y: -200,
       opacity: 0,
-      stagger: 0.1,
     })
     .to(
       ".intro",
@@ -60,7 +59,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     .from(
       ".text-scroll",
       {
-        delay: 0.65,
+        delay: 0.8,
         opacity: 0,
       },
       "<"
@@ -73,7 +72,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     duration: 0.5,
     scrollTrigger: {
       trigger: ".about-me",
-      markers: true,
+      // markers: true,
       start: "top 70%",
     },
   });
@@ -284,9 +283,46 @@ document.addEventListener("DOMContentLoaded", (event) => {
     duration: 0.5,
     scrollTrigger: {
       trigger: ".last-message",
-      markers: true,
+      // markers: true,
       start: "top 70%",
     },
+  });
+
+  let contactBox = gsap.timeline({ paused: true });
+
+  contactBox
+    .from(".contact-box:nth-child(odd) ", {
+      x: -100,
+      stagger: 0.12,
+      opacity: 0,
+      duration: 1,
+    })
+    .from(
+      ".contact-box:nth-child(2) ",
+      {
+        x: 100,
+        stagger: 0.1,
+        opacity: 0,
+        duration: 1,
+      },
+      "<"
+    )
+    .from(
+      ".social-media-box",
+      {
+        y: 100,
+        stagger: 0.1,
+        opacity: 0,
+        duration: 1,
+      },
+      "<"
+    );
+
+  ScrollTrigger.create({
+    trigger: ".contact-wrapper",
+    animation: contactBox,
+    start: "top 60%",
+    // markers: true,
   });
 
   const lenis = new Lenis();
