@@ -30,6 +30,7 @@ body {
   text-align: center;
   background-color: var(--secondary);
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  /* display: none; */
 }
 
 .intro-container {
@@ -102,6 +103,7 @@ a {
   background-color: var(--background);
   border-top: 3px solid var(--primary);
   color: var(--text);
+  /* display: none; */
 }
 
 header {
@@ -463,6 +465,8 @@ b.green {
   justify-content: center;
   width: 100%;
   height: fit-content;
+  /* display: none; */
+  overflow-x: hidden;
 }
 
 .contact-wrapper {

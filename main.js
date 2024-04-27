@@ -23,6 +23,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
     .to(".my-text .line", {
       delay: 0.15,
       y: -200,
+      duration: 1,
+      ease: "power4.out",
       opacity: 0,
     })
     .to(
@@ -34,11 +36,16 @@ document.addEventListener("DOMContentLoaded", (event) => {
       },
       "<"
     )
-    .from(".links p", {
-      x: -20,
-      opacity: 0,
-      stagger: 0.08,
-    })
+    .from(
+      ".links p",
+      {
+        delay: 0.3,
+        x: -20,
+        opacity: 0,
+        stagger: 0.08,
+      },
+      "<"
+    )
     .from(
       "#greeting .char",
       {
@@ -78,7 +85,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
   });
 
   let size = -29;
-  let textMovement = gsap.timeline({ repeat: -1 });
+  let textMovement = gsap.timeline({ delay: 3, repeat: -1 });
   textMovement
     .to(".text-scroll", {
       delay: 1,
