@@ -458,6 +458,10 @@ b.green {
   transition: transform 500ms ease-in-out;
 }
 
+.texts-cont {
+  display: none;
+}
+
 .contact-page {
   position: relative;
   display: flex;

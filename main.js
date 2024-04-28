@@ -6,6 +6,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
   new SplitType("#aLittle");
   new SplitType("#create");
 
+  gsap.set(".texts-cont", {
+    display: "block",
+  });
+
   gsap.set(".my-text .word", {
     y: 75,
   });
