@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
   intro
     .to(".my-text .word", {
       y: 0,
+      duration: 0.6,
       duration: 0.7,
       stagger: 0.12,
     })
@@ -45,6 +46,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
       {
         delay: 0.3,
         x: -20,
+        duration: 1,
         opacity: 0,
         stagger: 0.08,
       },
@@ -56,6 +58,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         opacity: 0,
         y: 20,
         stagger: 0.06,
+        duration: 0.7,
       },
       "<"
     )
@@ -64,6 +67,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
       {
         delay: 0.15,
         opacity: 0,
+        duration: 1,
       },
       "<"
     )
