@@ -336,7 +336,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
   ScrollTrigger.create({
     trigger: ".contact-wrapper",
     animation: contactBox,
-    start: "top 60%",
+    start: "top 50%",
     // markers: true,
   });
 
