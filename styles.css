@@ -470,7 +470,7 @@ b.green {
   width: 100%;
   height: fit-content;
   /* display: none; */
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .contact-wrapper {
