@@ -473,6 +473,7 @@ b.green {
   overflow: hidden;
 }
 
+
 .contact-wrapper {
   width: 100%;
   display: grid;
@@ -558,6 +559,7 @@ b.green {
 
 video {
   height: 400px;
+  pointer-events: none;
 }
 
 .social-media-box:hover {
