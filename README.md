@@ -1,1 +1,1 @@
-portfolio website ~ https://jbnamuro.github.io/
+portfolio website ~ http://jabarinamuro.com/
